@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link href="CalculatorStyleSheet.css" rel="stylesheet" />
+
+   
+</head>
+
+<body>
+
+    <h1>
+        HTML5 Calculator
+    </h1>
+    <div id="calcBody" class="calcBody">
+        <div id="displayWindow">
+            <!--onKeyDown - to disable the user from typing in the value.
+        - https://stackoverflow.com/questions/6951658/how-to-prevent-user 
+             -from-typing-in-text-field-without-disabling-the-field--> 
+            <input type="text" id="displayTb" placeholder="0" onkeydown="return false" class="displayResult" />
+        </div>
+
+        <div>
+            <div class="row">
+                <button type="button" class="btnButtons" id="btn7"> 7 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn8" class="btnButtons"> 8 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn9" class="btnButtons"> 9 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnPlus" class="btnButtons btnOperator"> +/= </button>
+            </div>
+
+        </div>
+        <div>
+            <div class="row">
+                <button type="button" id="btn4" class="btnButtons"> 4 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn5" class="btnButtons"> 5 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn6" class="btnButtons"> 6 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnMinus" class="btnButtons btnOperator"> - </button>
+            </div>
+
+        </div>
+        <div>
+            <div class="row">
+                <button type="button" id="btn1" class="btnButtons"> 1 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn2" class="btnButtons"> 2 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn3" class="btnButtons"> 3 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnMultiply" class="btnButtons btnOperator"> X</button>
+            </div>
+
+        </div>
+        <div>
+            <div class="row">
+
+                <button type="button" id="btnClear" class="btnButtons btnOperator"> C </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btn0" class="btnButtons"> 0 </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnDot" class="btnButtons"> . </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnDivide" class="btnButtons btnOperator"> / </button>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="CalculatorJS.js"></script>
+
+    
+
+
+</body>
+
+</html>

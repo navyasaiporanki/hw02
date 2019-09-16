@@ -1,0 +1,53 @@
+﻿body {
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    font-style:italic
+}
+
+.btnButtons {
+    width: 60px;
+    height: 45px;
+    padding: 5px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    font-size: 16px;
+    border-spacing:2px;
+}
+
+    .btnButtons:hover {
+        background-color: red;
+        /* For curson pointer /*https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor  */
+        cursor:pointer;
+    }
+
+.row {
+    display: table-cell;
+    padding: 1px;
+}
+
+.calcBody {
+    display: table;
+    margin-left: 40%;
+    margin-top: 10%;
+    border: solid;
+    padding: 2px 2px 2px 2.5px;
+    background-color: black;
+}
+
+.displayResult {
+    height: 50px;
+    margin-bottom: 5px;
+    text-align: right;
+    width: 243px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.btnOperator {
+
+    background-color:orange;
+    color:white
+}
