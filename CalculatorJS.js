@@ -1,5 +1,7 @@
 
-// A JavaScript file that handles the execution logic of the calculator.
+// A JavaScript file that handles the execution logic of the calculator. 
+//The programm can perform all kinds of arithmetic operations with the same set of numbers.
+//The current operation will be visible on the screen followed by the next operation.
 
 
 (function () { 
@@ -13,16 +15,26 @@ for (var i = 0; i < classNameList.length; i++) {
     classNameList[i].addEventListener("click", AddDataEvents, false);
 }
 
+    var decimalFound = false;
 function AddDataEvents(event) {
 
 
     if (event.target.className === 'btnButtons') {
-    
+
+        if (event.target.innerText === '.' && decimalFound == true) {
+            //document.getElementById("displayTb").value += document.getElementById("displayTb").value + '.';
+            return
+        }
+
         if (initialDisplayValue === '0') {
             initialDisplayValue = event.target.innerText;
         } else {
             //  alert("else");
             initialDisplayValue = document.getElementById("displayTb").value + event.target.innerText;
+            
+        }
+        if (event.target.innerText === '.') {
+            decimalFound = true;
         }
         // alert(initialDisplayValue);
         document.getElementById("displayTb").value = initialDisplayValue;
@@ -33,6 +45,7 @@ function AddDataEvents(event) {
         currentValues = [];
         remainingValue = 0;
         operatorClicked = false;
+        decimalFound = false;
         return;
     }
 
@@ -57,7 +70,7 @@ function AddDataEvents(event) {
     }
 
     if (event.target.id == 'btnPlus') {
-
+        decimalFound = false;
        // debugger;
         if (initialDisplayValue != '0') {
            // alert("inside");
@@ -90,11 +103,15 @@ function AddDataEvents(event) {
                 operatorClicked = false;
             }
 
+            if (document.getElementById("displayTb").value.indexOf('.') != -1) {
+                decimalFound = true;
+            }
+
         }
     }
 
     if (event.target.id == 'btnMinus') {
-
+        decimalFound = false;
         var displayedValues = document.getElementById("displayTb").value;
         var currentValues = displayedValues.split(' ');
 
@@ -118,7 +135,7 @@ function AddDataEvents(event) {
     }
     if (event.target.id == 'btnMultiply') {
 
-        //alert("inside multiply");
+        decimalFound = false;
         var displayedValues = document.getElementById("displayTb").value;
         var currentValues = displayedValues.split(' ');
         if (initialDisplayValue != '0' && !operatorClicked && currentValues.length < 3) {
@@ -135,6 +152,7 @@ function AddDataEvents(event) {
     }
     if (event.target.id == 'btnDivide') {
 
+        decimalFound = false;
         var displayedValues = document.getElementById("displayTb").value;
         var currentValues = displayedValues.split(' ');
         if (initialDisplayValue != '0' && !operatorClicked && currentValues.length < 3) {
@@ -157,7 +175,8 @@ function doOperation(event) {
    // alert("doOperation");
     var displayedValues = document.getElementById("displayTb").value;
     var currentValues = displayedValues.split(' ');
-     //alert(currentValues.length);
+    decimalFound = false;
+
     if (currentValues[1] == '-') {
         var newValue = (parseFloat(currentValues[0]) - parseFloat(currentValues[2])) + ' ' + event.target.innerText + ' ';
         
