@@ -113,7 +113,7 @@ function AddDataEvents(event) {
         }
         //alert(currentValues.length);
         if (currentValues.length == 3) {
-            doOperation();
+            doOperation(event);
         }
     }
     if (event.target.id == 'btnMultiply') {
@@ -130,7 +130,7 @@ function AddDataEvents(event) {
             operatorClicked = true;
         }
         if (currentValues.length == 3) {
-            doOperation();
+            doOperation(event);
         }
     }
     if (event.target.id == 'btnDivide') {
@@ -146,14 +146,14 @@ function AddDataEvents(event) {
         }
 
         if (currentValues.length == 3) {
-            doOperation();
+            doOperation(event);
         }
     }
 }
 
 
 
-function doOperation() {
+function doOperation(event) {
    // alert("doOperation");
     var displayedValues = document.getElementById("displayTb").value;
     var currentValues = displayedValues.split(' ');
