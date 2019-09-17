@@ -1,11 +1,11 @@
-﻿
+
 // A JavaScript file that handles the execution logic of the calculator.
 
 
 (function () { 
-
+var initialDisplayValue = '0';
 var operatorClicked = false;
-
+//var currentValues = [];
 
 var classNameList = document.getElementsByClassName("btnButtons");
 
@@ -17,7 +17,7 @@ function AddDataEvents(event) {
 
 
     if (event.target.className === 'btnButtons') {
-        var initialDisplayValue = document.getElementById("displayTb").value;
+    
         if (initialDisplayValue === '0') {
             initialDisplayValue = event.target.innerText;
         } else {
